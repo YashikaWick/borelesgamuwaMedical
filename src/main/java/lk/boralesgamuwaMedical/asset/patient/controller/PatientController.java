@@ -1,27 +1,16 @@
 package lk.boralesgamuwaMedical.asset.patient.controller;
 
 import lk.boralesgamuwaMedical.asset.commonAsset.service.CommonService;
-import lk.boralesgamuwaMedical.asset.employee.entity.Employee;
-import lk.boralesgamuwaMedical.asset.employee.entity.EmployeeFiles;
-import lk.boralesgamuwaMedical.asset.employee.entity.Enum.EmployeeStatus;
 import lk.boralesgamuwaMedical.asset.patient.entity.Patient;
 import lk.boralesgamuwaMedical.asset.patient.service.PatientService;
-import lk.boralesgamuwaMedical.asset.userManagement.entity.User;
 import lk.boralesgamuwaMedical.asset.userManagement.service.UserService;
 import lk.boralesgamuwaMedical.util.service.DateTimeAgeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.validation.Valid;
-import java.time.LocalDateTime;
-import java.util.UUID;
 
 @RequestMapping("/patient")
 @Controller
