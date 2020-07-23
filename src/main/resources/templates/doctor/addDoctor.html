@@ -17,12 +17,12 @@
         <div class="col">
             <h4 class="text-light text-center">
                 <strong>
-                    <span th:text="${addStatus==true?'New Patient Add':'Update Patient Details'}"></span>
+                    <span th:text="${addStatus==true?'New Doctor Add':'Update Doctor Details'}"></span>
                 </strong>
             </h4>
         </div>
         <div class="col">
-            <a href="/patient" class="btn btn-primary">
+            <a href="/doctor" class="btn btn-primary">
                 <i class="fa fa-list"></i>&nbsp; View List
             </a>
         </div>
@@ -31,8 +31,8 @@
 <!--Form Content - start -->
 <div class="container-fluid bg-dark formBorder">
     <div class="col-sm-12 flex-column ">
-        <form id="form" class="form-horizontal" th:action="${addStatus==true?'/patient/save':'/patient/update'}"
-              th:object="${patient}" method="POST" enctype="multipart/form-data">
+        <form id="form" class="form-horizontal" th:action="${addStatus==true?'/doctor/save':'/doctor/update'}"
+              th:object="${doctor}" method="POST" enctype="multipart/form-data">
             <div class="row">
                 <!--Left Side-->
                 <div class="form-group col-md-6 col-sm-6 text-left flex-column">
@@ -58,7 +58,7 @@
                                 <option th:each="titles : ${title}"
                                         th:text="${titles.title}"
                                         th:value="${titles}"
-                                        th:selected="${titles==patient.title?'selected':'unselected'}"></option>
+                                        th:selected="${titles==doctor.title?'selected':'unselected'}"></option>
                             </select>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
 
-                    <!--Nic-->
+                    <!--Nic
                     <div class="form-row text-right">
                         <div class="col-md-4">
                             <label class="control-label" for="nic">NIC No :</label>
@@ -87,7 +87,7 @@
                                   th:if="${#fields.hasErrors('nic')}">Error
                                                                NIC Number</span>
                         </div>
-                    </div>
+                    </div>-->
                     <!--Gender-->
                     <div class="form-row text-right">
                         <div class="col-md-4">
@@ -99,66 +99,43 @@
                                 <option th:each="genders : ${gender}"
                                         th:text="${genders.gender}"
                                         th:value="${genders}"
-                                        th:selected="${genders==patient.gender?'selected':'unselected'}"></option>
+                                        th:selected="${genders==doctor.gender?'selected':'unselected'}"></option>
                             </select>
                         </div>
                     </div>
-                    <!--Date of birth-->
-                    <div class="form-row text-right">
-                        <div class="col-md-4">
-                            <label class="control-label" for="dateOfBirth">Birth date :</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input id="dateOfBirth" th:field="*{dateOfBirth}" class="form-control" tabindex="8"
-                                   placeholder="Ex: 1990 - 01 - 20"
-                                   required type="date"/>
-                            <span id="dateOfBirthError" th:errors="*{dateOfBirth}"
-                                  th:if="${#fields.hasErrors('dateOfBirth')}" class="error">Error Birthday</span>
-                        </div>
-                    </div>
-                </div>
+
                 <!--Right Side-->
                 <div class="form-group col-md-6 col-sm-6 text-right flex-column">
 
-                    <!--Address-->
-                    <div class="form-row text-right">
-                        <div class="col-md-4">
-                            <label class="control-label" for="address">Address :</label>
-                        </div>
-                        <div class="col-md-8">
-                            <textarea id="address" th:field="*{address}" class="form-control" tabindex="12"
-                                      required></textarea>
-                            <span class="error" th:errors="*{address}"
-                                  th:if="${#fields.hasErrors('address')}" id="addressError">Error Address</span>
-                        </div>
-                    </div>
+
                     <!--Mobile Number One-->
                     <div class="form-row text-right">
                         <div class="col-md-4">
-                            <label class="control-label" for="mobileOne">Mobile One No :</label>
+                            <label class="control-label" for="mobile">Mobile No :</label>
                         </div>
                         <div class="col-md-8">
-                            <input id="mobileOne" th:field="*{mobileOne}" class="form-control mobile" tabindex="13"
+                            <input id="mobile" th:field="*{mobile}" class="form-control mobile" tabindex="13"
                                    type="text"
                                    maxlength="10" min="9"
                                    required/>
-                            <span class="error" th:errors="*{mobileOne}"
-                                  th:if="${#fields.hasErrors('mobileOne')}"
+                            <span class="error" th:errors="*{mobile}"
+                                  th:if="${#fields.hasErrors('mobile')}"
                                   id="mobileOneError">Error Mobile Number</span>
                         </div>
                     </div>
-                    <!--Mobile Number Two-->
+
+                    <!--SLMC Number-->
                     <div class="form-row text-right">
                         <div class="col-md-4">
-                            <label class="control-label" for="mobileTwo">Mobile Two No :</label>
+                            <label class="control-label" for="slmc_number">SLMC No :</label>
                         </div>
                         <div class="col-md-8">
-                            <input id="mobileTwo" th:field="*{mobileTwo}" class="form-control mobile" tabindex="14"
+                            <input id="slmc_number" th:field="*{slmcNumber}" class="form-control mobile" tabindex="14"
                                    type="text"
                                    maxlength="10" min="9"/>
-                            <span class="error" th:errors="*{mobileTwo}"
-                                  th:if="${#fields.hasErrors('mobileTwo')}"
-                                  id="mobileTwoError">Error Mobile  Number</span>
+                            <span class="error" th:errors="*{slmcNumber}"
+                                  th:if="${#fields.hasErrors('slmcNumber')}"
+                                  id="slmc_numberError">Error Mobile  Number</span>
                         </div>
                     </div>
 
@@ -178,7 +155,7 @@
                     <!--Current Working Place-->
                     <!-- <div class="form-row text-right">
                          <div class="col-md-4">
-                             <label class="control-label" for="workingPlace">Patient Working Place :</label>
+                             <label class="control-label" for="workingPlace">Doctor Working Place :</label>
                          </div>
                          <div class="col-md-8">
                              <select id="workingPlace" th:field="*{workingPlace}" class="form-control" tabindex="20" required>
@@ -253,8 +230,7 @@
                     <!--Button-->
                     <div class="form-group col-md-12 col-sm-12 text-center flex-column ">
                         <button class="btn btn-success" type="submit" tabindex="21">
-                            <i class="fa fa-save " style="font-size: 20px"></i>&nbsp; &nbsp;<span id="submit"
-                                                                                                  th:text="${addStatus==true?'Save': 'Update'}"></span>
+                            <i class="fa fa-save " style="font-size: 20px"></i>&nbsp; &nbsp;<span id="submit" th:text="${addStatus==true?'Save': 'Update'}"></span>
                         </button>
                     </div>
                 </div>
