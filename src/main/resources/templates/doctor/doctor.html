@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: headerFragment}">
+    <meta charset="UTF-8">
+    <title>Thymeleaf Springboot </title>
+</head>
+<body>
+<nav th:replace="~{fragments/navBar :: navBarFragment}"></nav>
+
+<div class="container-fluid bg-secondary form-Border">
+    <div class="row text-center formManagement border-info">
+        <div class="col">
+            <a class="btn btn-success" href="/doctor/add"><i class="fa fa-user-plus"></i>
+                &nbsp; New Doctor</a>
+        </div>
+        <div class="col">
+            <h4 class="text-info text-center">
+                <strong>
+                    Doctor Management
+                </strong>
+            </h4>
+        </div>
+        <div class="col">
+           <!-- <a href="/doctor/workingPlace" id="searchShow" class="btn btn-primary">
+                <i class="fa fa-user " style="font-size: 20px"></i>&nbsp;Add&nbsp;
+                <i class="fas fa-store-alt" style="font-size: 20px"></i>
+                &nbsp;
+            </a>-->
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark formBorder text-center">
+    <div class="col">
+        <div class="col" id="doctorListPresent" th:if="${not #lists.isEmpty(doctors)}">
+            <table class="table table-hover table-striped" id="myTable">
+                <thead>
+                <tr>
+                    <th> Code</th>
+                    <th> Name</th>
+                    <th> SLMC No</th>
+                    <th> Gender</th>
+                    <th> Mobile</th>
+                    <th> Nic</th>
+                    <th> Consultancy</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="doctor, rowCount : ${doctors}">
+                    <th th:text="${rowCount.count}"></th>
+                    <!--<th th:text="${doctor.code}"></th>-->
+                    <th th:text="${doctor.slmcNumber}"></th>
+                    <th th:text="${doctor.gender}"></th>
+                    <th th:text="${doctor.mobile}"></th>
+                    <th th:text="${doctor.consultation}"></th>
+                    <th>
+                        <a id="doctorView" th:href="${'/doctor/' + doctor.id}" class="btn btn-success btn-sm"><i
+                                class="fa fa-folder-open"></i>&nbsp;View</a>
+                        <a id="doctorEdit" th:href="${'/doctor/edit/' + doctor.id}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>&nbsp;Edit</a>
+                        <a id="doctorRemove" th:href="${'/doctor/remove/' + doctor.id}"
+                           th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>
+                            Delete</a>
+                    </th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row" th:if="${ #lists.isEmpty(doctors)}">
+        <div class="col-sm-12">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="text-center text-danger">
+                    <strong>There is no doctor upto now please add doctor to the system
+                        using add user button.
+                    </strong>
+                </h3>
+            </div>
+        </div>
+        <script>
+            /*active boostrap alert - start*/
+            $(".alert").alert();
+            /*active boostrap alert - end*/
+        </script>
+    </div>
+</div>
+<!--footer include-->
+<footer th:replace="~{fragments/footer :: footerFragment}"></footer>
+<!--script include-->
+<script th:replace="~{fragments/script :: scriptFragment}"></script>
+
+</body>
+</html>

@@ -24,6 +24,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @JsonFilter("Patient")
 public class Patient extends AuditEntity {
+
     @Size(min = 3, message = "Your name cannot be accepted")
     private String name;
 
@@ -31,7 +32,7 @@ public class Patient extends AuditEntity {
     private String code;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dob;
+    private LocalDate dateOfBirth;
 
     @Size( max = 12, min = 10, message = "NIC number is contained numbers between 9 and X/V or 12 " )
     @Column( unique = true )
