@@ -90,7 +90,18 @@
                             </select>
                         </div>
                     </div>
+                    <!--Consultation fee-->
+                    <div class="form-row text-right">
+                        <div class="col-md-4">
+                            <label class="control-label" for="cfee">Mobile No :</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-control" data-th-field="*{consultationFee}" id="cfee"
 
+                                   required tabindex="13"
+                                   type="text"/>
+                        </div>
+                    </div>
                     <!--Mobile Number One-->
                     <div class="form-row text-right">
                         <div class="col-md-4">
@@ -172,8 +183,9 @@
                 <!--Button-->
                 <div class="form-group col-md-12 col-sm-12 text-center flex-column ">
                     <button class="btn btn-success" tabindex="21" type="submit">
-                        <i class="fa fa-save " style="font-size: 20px"></i>&nbsp; &nbsp;<span data-th-text="${addStatus==true?'Save': 'Update'}"
-                                                                                              id="submit"></span>
+                        <i class="fa fa-save " style="font-size: 20px"></i>&nbsp; &nbsp;<span
+                            data-th-text="${addStatus==true?'Save': 'Update'}"
+                            id="submit"></span>
                     </button>
                 </div>
                 <div class="form-row">

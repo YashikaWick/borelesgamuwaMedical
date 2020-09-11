@@ -1,5 +1,6 @@
 package lk.boralesgamuwaMedical.asset.doctor.entity;
 
+
 import lk.boralesgamuwaMedical.asset.commonAsset.model.Enum.Gender;
 import lk.boralesgamuwaMedical.asset.commonAsset.model.Enum.Title;
 import lk.boralesgamuwaMedical.asset.consultation.entity.Consultation;
@@ -11,6 +12,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import java.math.BigDecimal;
 
 
 @Entity
@@ -44,6 +47,9 @@ public class Doctor extends AuditEntity {
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    @NotEmpty
+    private BigDecimal consultationFee;
 
     @ManyToOne
     private Consultation consultation;

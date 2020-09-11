@@ -1,0 +1,21 @@
+Already Done
+=============
+1. Employee Management
+2. Role Management
+3. User Management
+4. Doctor Management
+5. Consultation Management
+6. Patient Management
+7. Discount Management
+8. Additional Service Management
+
+Need to do
+============
+1. Doctor appointment Management |  Process Management
+2. Additional Service Management |
+
+
+// Users
+1. Cashier
+2. Owner / Manager
+3.
