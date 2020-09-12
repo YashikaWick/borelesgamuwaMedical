@@ -1,6 +1,6 @@
+package lk.boralesgamuwaMedical.asset.discountRatio.entity;
 
-
-import lk.suwasewana.asset.discountRatio.entity.Enum.DiscountRatioStatus;
+import lk.boralesgamuwaMedical.asset.discountRatio.entity.Enum.DiscountRatioStatus;
 import lombok.*;
 
 import javax.persistence.*;

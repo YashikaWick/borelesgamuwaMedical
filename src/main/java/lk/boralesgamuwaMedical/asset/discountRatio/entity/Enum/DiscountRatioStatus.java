@@ -1,3 +1,4 @@
+package lk.boralesgamuwaMedical.asset.discountRatio.entity.Enum;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

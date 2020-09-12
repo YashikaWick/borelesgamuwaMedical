@@ -1,8 +1,9 @@
+package lk.boralesgamuwaMedical.asset.discountRatio.service;
 
-import lk.suwasewana.asset.discountRatio.dao.DiscountRatioDao;
-import lk.suwasewana.asset.discountRatio.entity.DiscountRatio;
-import lk.suwasewana.asset.discountRatio.entity.Enum.DiscountRatioStatus;
-import lk.suwasewana.util.interfaces.AbstractService;
+import lk.boralesgamuwaMedical.asset.discountRatio.dao.DiscountRatioDao;
+import lk.boralesgamuwaMedical.asset.discountRatio.entity.DiscountRatio;
+import lk.boralesgamuwaMedical.asset.discountRatio.entity.Enum.DiscountRatioStatus;
+import lk.boralesgamuwaMedical.util.interfaces.AbstractService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
