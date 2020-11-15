@@ -8,7 +8,6 @@ import lk.boralesgamuwaMedical.asset.commonAsset.model.Enum.Title;
 import lk.boralesgamuwaMedical.asset.commonAsset.model.FileInfo;
 import lk.boralesgamuwaMedical.asset.employee.entity.Enum.Designation;
 import lk.boralesgamuwaMedical.asset.employee.entity.Enum.EmployeeStatus;
-import lk.boralesgamuwaMedical.asset.message.entity.EmailMessage;
 import lk.boralesgamuwaMedical.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -88,8 +87,7 @@ public class Employee extends AuditEntity {
     private LocalDate dateOfAssignment;
 
 
-    @ManyToMany( mappedBy = "employees" )
-    private List<EmailMessage> emailMessages;
+
 
     @Transient
     private List< MultipartFile > files = new ArrayList<>();
