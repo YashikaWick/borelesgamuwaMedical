@@ -3,14 +3,12 @@ package lk.boralesgamuwaMedical.asset.doctor.controller;
 import lk.boralesgamuwaMedical.asset.commonAsset.model.Enum.Gender;
 import lk.boralesgamuwaMedical.asset.commonAsset.model.Enum.Title;
 import lk.boralesgamuwaMedical.asset.consultation.service.ConsultationService;
-import lk.boralesgamuwaMedical.asset.doctor.entity.Doctor;
 
+import lk.boralesgamuwaMedical.asset.doctor.entity.Doctor;
 import lk.boralesgamuwaMedical.asset.doctor.service.DoctorService;
 import lk.boralesgamuwaMedical.asset.userManagement.service.UserService;
 import lk.boralesgamuwaMedical.util.service.DateTimeAgeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

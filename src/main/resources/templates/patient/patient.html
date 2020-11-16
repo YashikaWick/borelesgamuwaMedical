@@ -35,13 +35,17 @@
             <table class="table table-hover table-striped" id="myTable">
                 <thead>
                 <tr>
+                    <th> Id</th>
                     <th> Code</th>
                     <th> Name</th>
-                    <th> Gender</th>
-                    <th> Mobile</th>
-                    <th> Allergies</th>
+                    <!--<th> Age</th>-->
                     <th> Nic</th>
+                    <th> Mobile</th>
+                    <th> Mobile2 (Optional)</th>
                     <th> Address</th>
+                    <th> Gender</th>
+                    <th> Allergies</th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -49,11 +53,14 @@
                     <th th:text="${rowCount.count}"></th>
                     <th th:text="${patient.code}"></th>
                     <th th:text="${patient.name}"></th>
-                    <th th:text="${patient.gender}"></th>
-                    <th th:text="${patient.mobileOne}"></th>
-                    <th th:text="${patient.allergies}"></th>
+                   <!-- <th th:text="${patient.}"></th>-->
                     <th th:text="${patient.nic}"></th>
+                    <th th:text="${patient.mobileOne}"></th>
+                    <th th:text="${patient.mobileTwo}"></th>
                     <th th:text="${patient.address}"></th>
+                    <th th:text="${patient.gender}"></th>
+                    <th th:text="${patient.allergies}"></th>
+
                     <th>
                         <a id="patientView" th:href="${'/patient/' + patient.id}" class="btn btn-success btn-sm"><i
                                 class="fa fa-folder-open"></i>&nbsp;View</a>
