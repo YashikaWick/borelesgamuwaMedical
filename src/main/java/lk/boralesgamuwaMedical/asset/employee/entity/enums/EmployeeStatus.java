@@ -1,4 +1,4 @@
-package lk.boralesgamuwaMedical.asset.employee.entity.Enum;
+package lk.boralesgamuwaMedical.asset.employee.entity.enums;
 
 public enum EmployeeStatus {
     WORKING("Working"),
