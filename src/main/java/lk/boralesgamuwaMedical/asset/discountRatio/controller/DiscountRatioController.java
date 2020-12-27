@@ -1,5 +1,4 @@
 package lk.boralesgamuwaMedical.asset.discountRatio.controller;
-
 import lk.boralesgamuwaMedical.asset.discountRatio.entity.DiscountRatio;
 import lk.boralesgamuwaMedical.asset.discountRatio.entity.Enum.DiscountRatioStatus;
 import lk.boralesgamuwaMedical.asset.discountRatio.service.DiscountRatioService;

@@ -1,5 +1,4 @@
 package lk.boralesgamuwaMedical.asset.discountRatio.entity.Enum;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -10,4 +9,5 @@ public enum DiscountRatioStatus {
     STOP("Stop");
 
     private final String discountRatioStatus;
+
 }

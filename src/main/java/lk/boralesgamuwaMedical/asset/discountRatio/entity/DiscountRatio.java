@@ -1,10 +1,13 @@
 package lk.boralesgamuwaMedical.asset.discountRatio.entity;
 
+
 import lk.boralesgamuwaMedical.asset.discountRatio.entity.Enum.DiscountRatioStatus;
 import lombok.*;
 
 import javax.persistence.*;
-import java.lang.reflect.Type;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import java.math.BigDecimal;
 
 @Entity
