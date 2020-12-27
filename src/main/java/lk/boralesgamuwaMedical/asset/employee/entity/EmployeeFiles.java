@@ -1,5 +1,7 @@
 package lk.boralesgamuwaMedical.asset.employee.entity;
 
+
+
 import lk.boralesgamuwaMedical.util.audit.AuditEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
